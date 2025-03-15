@@ -1,101 +1,148 @@
+"use client";
+import Link from "next/link";
 import Image from "next/image";
-
+import { Button } from "@/components/ui/button";
 export default function Home() {
+  const functionalites: { description: string; video: string }[] = [
+    {
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
+      video: "videoTest.mp4",
+    },
+    {
+      description: "Lorem ipsum dolor sit amet",
+      video: "videoTest.mp4",
+    },
+    {
+      description: "Lorem ipsum dolor ",
+      video: "videoTest.mp4",
+    },
+    {
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quod?",
+      video: "videoTest.mp4",
+    },
+    {
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quod?",
+      video: "videoTest.mp4",
+    },
+  ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="grid grid-flow-row w-full gap-8">
+        <section className="flex flex-col items-center h-full col-span-1 gap-8 p-2">
+          <div className="bg-cyan-100/20 rounded-2xl p-2 flex items-center justify-center gap-4 max-w-[600px]">
+            <button
+              type="button"
+              className="bg-black text-white p-2 w-fit text-sm md:text-lg rounded-full"
+            >
+              Empowering Educators
+            </button>
+            <h4 className="text-sm md:text-lg w-full font-semibold text-start">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quas,Lorem ipsum dolor sit amet. labore! Lorem, ipsum dolor sit
+            </h4>
+          </div>
+          <div className="flex items-center md:items-center text-center md:text-start w-full gap-10">
+            <div className="flex flex-col w-full gap-4 p-2">
+              <h1 className="text-black text-4xl lg:text-5xl font-bold w-full">
+                Streamline Your Yeaching Journey
+              </h1>
+              <p className="text-gray-600 font-bold text-lg lg:text-2xl mx-auto max-w-[500px] md:max-w-full">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Exercitationem, facilis.
+              </p>
+              <Button
+                type="button"
+                className="mx-auto md:mx-0 w-fit bg-mainBgButton p-2 rounded-xl text-lg md:text-xl text-white"
+              >
+                Start a tutorial
+              </Button>
+            </div>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+              src="https://fast.image.delivery/tavvdre.jpg"
+              className="hidden md:block rounded-2xl min-w-[300px] w-full max-w-[500px] "
+              alt="professora ministrando aula"
+              width={500}
+              height={300}
+              sizes="100vw"
+              style={{ objectFit: "cover", width: "60%", height: "auto" }}
+            ></Image>
+          </div>
+        </section>
+      </section>
+      <section className="w-full mt-12 space-y-4">
+        <h2 className="font-semibold text-2xl md:text-3xl tracking-wider">
+          Funcionalidades
+        </h2>
+        <ul className="flex flex-wrap justify-center gap-8 items-center w-full p-2">
+          {functionalites.length > 0 &&
+            functionalites.map((video, i) => (
+              <li className="w-fit relative border-2 border-black" key={i}>
+                <video
+                  src={video.video}
+                  className="max-h-80 w-full"
+                  loop
+                  autoPlay
+                ></video>
+                <p className="absolute bottom-0 left-0 p-2 w-full bg-black/40 text-start text-white text-sm break-words">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Nihil maiores eveniet, ducimus fuga praesentium minima cum.
+                </p>
+              </li>
+            ))}
+        </ul>
+      </section>
+      <footer className="w-full flex-col p-2 bg-black text-white">
+        <section className="flex flex-row w-full gap-40 mb-4">
+          <ul className="space-y-2">
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Hostinger</Link>
+            </li>
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Github</Link>
+            </li>
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Contact Us</Link>
+            </li>
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Home</Link>
+            </li>
+          </ul>
+          <ul className="space-y-2">
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Hostinger</Link>
+            </li>
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Github</Link>
+            </li>
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Contact Us</Link>
+            </li>
+            <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
+              <Link href="/#">Home</Link>
+            </li>
+          </ul>
+        </section>
+        <section className="flex flex-row items-center justify-between w-full gap-4">
+          <p className="text-sm tracking-widest">
+            TEACH<span className="text-mainBgButton">L</span>YZE
+          </p>
+          <div className="flex text-sm items-center gap-4">
+            <p className="">© 2021 TCC All rights reserved</p>
+            <Link href={""} className="hover:text-mainBgButton">
+              Terms
+            </Link>
+            <Link href={""} className="hover:text-mainBgButton">
+              Privacy
+            </Link>
+            <Link href={""} className="hover:text-mainBgButton">
+              Docs
+            </Link>
+          </div>
+          <span className="w-20">{/* usado pra equilibrar o layout */}</span>
+        </section>
       </footer>
-    </div>
+    </>
   );
 }
