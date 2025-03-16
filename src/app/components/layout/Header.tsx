@@ -6,7 +6,7 @@ export default function Header() {
         <Link href={"/pages"} className="text-2xl tracking-widest p-0 m-0">
           TEACH<span className="text-mainBgButton">L</span>YZE
         </Link>
-        <ul className="hidden md:visible md:flex flex-row gap-8">
+        <ul className="hidden md:visible md:flex items-center flex-row gap-8">
           <li>
             <Link href={"/pages"}>Home</Link>
           </li>
