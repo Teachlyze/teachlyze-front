@@ -29,12 +29,12 @@ export default function Home() {
   ];
   return (
     <>
-      <section className="grid grid-flow-row w-full gap-8">
-        <section className="flex flex-col items-center h-full col-span-1 gap-8 p-2">
-          <div className="bg-cyan-100/20 rounded-2xl p-2 flex items-center justify-center gap-4 max-w-[600px]">
+      <section className="grid p-4 grid-flow-row w-full gap-8">
+        <section className="flex flex-col items-center h-full col-span-1 gap-8 ">
+          <div className="bg-cyan-100/40 rounded-2xl p-2 flex items-center justify-center gap-4 max-w-[600px]">
             <button
               type="button"
-              className="bg-black text-white p-2 w-fit text-sm md:text-lg rounded-full"
+              className="bg-black text-white  w-fit text-sm md:text-lg rounded-full"
             >
               Empowering Educators
             </button>
@@ -44,7 +44,7 @@ export default function Home() {
             </h4>
           </div>
           <div className="flex items-center md:items-center text-center md:text-start w-full gap-10">
-            <div className="flex flex-col w-full gap-4 p-2">
+            <div className="flex flex-col w-full gap-4 ">
               <h1 className="text-black text-4xl lg:text-5xl font-bold w-full">
                 Streamline Your Yeaching Journey
               </h1>
@@ -71,21 +71,34 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="w-full mt-12 space-y-4">
-        <h2 className="font-semibold text-2xl md:text-3xl tracking-wider">
+      <section className="bg-cyan-100/60 shadow-xl text-start p-2 rounded-xl space-y-4 w-[90%] max-w-[900px] mx-auto">
+        <h3 className="text-2xl">Lorem ipsum dolor sit.</h3>
+        <div className="text-lg grid grid-cols-1">
+          <p className="col-span-1 text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            illo autem sit tempora ex nesciunt natus debitis voluptatibus
+            possimus quam cupiditate quibusdam placeat quod qui obcaecati
+            mollitia voluptate perspiciatis doloribus, minus sapiente. Ad rerum
+            dolorem numquam. In excepturi suscipit, nemo iste unde quisquam
+            dolor accusantium corporis modi eveniet recusandae provident!
+          </p>
+        </div>
+      </section>
+      <section className="w-full space-y-4">
+        <h2 className="font-semibold text-2xl mt-12 md:text-3xl tracking-wider">
           Funcionalidades
         </h2>
-        <ul className="flex flex-wrap justify-center gap-8 items-center w-full p-2">
+        <ul className="flex flex-wrap justify-center text-start font-bold gap-8 items-center w-full ">
           {functionalites.length > 0 &&
             functionalites.map((video, i) => (
-              <li className="w-fit relative border-2 border-black" key={i}>
+              <li className="w-fit relative border-4 border-black" key={i}>
                 <video
                   src={video.video}
                   className="max-h-80 w-full"
                   loop
                   autoPlay
                 ></video>
-                <p className="absolute bottom-0 left-0 p-2 w-full bg-black/40 text-start text-white text-sm break-words">
+                <p className="absolute bottom-0 left-0 p-2 w-full bg-black/40 text-white text-sm break-words">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Nihil maiores eveniet, ducimus fuga praesentium minima cum.
                 </p>
@@ -93,7 +106,7 @@ export default function Home() {
             ))}
         </ul>
       </section>
-      <footer className="w-full flex-col p-2 bg-black text-white">
+      <footer className="w-full flex-col p-4 bg-black text-white">
         <section className="flex flex-row w-full gap-40 mb-4">
           <ul className="space-y-2">
             <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-75 ease-in-out">
