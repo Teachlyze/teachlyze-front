@@ -1,0 +1,51 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "João",
+      "nota": 9.5
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "nota": 8.5
+    },
+    {
+      "id": 3,
+      "nome": "José",
+      "nota": 7.5
+    },
+    {
+      "id": 4,
+      "nome": "Pedro",
+       "nota": 6.5
+    }
+  ],
+  "professores": [
+    {
+      "id": 1,
+      "nome": "Ana",
+      "disciplina": "Matemática"
+    },
+    {
+      "id": 2,
+      "nome": "Carlos",
+      "disciplina": "Português"
+    },
+    {
+      "id": 3,
+      "nome": "Marta",
+      "disciplina": "História"
+    },
+    {
+      "id": 4,
+      "nome": "Paulo",
+      "disciplina": "Geografia"
+    },
+    {
+      "id": 5,
+      "nome": "Lucas",
+      "disciplina": "Física"
+    }
+  ]
+}
