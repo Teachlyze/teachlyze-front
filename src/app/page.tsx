@@ -2,36 +2,66 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import {
+  Bot,
+  ClipboardList,
+  CopyX,
+  MessagesSquare,
+  Radio,
+  TvMinimal,
+} from "lucide-react";
+
+type TFunctionalities = {
+  id: number;
+  description: string;
+  icon: JSX.Element;
+  details: {
+    text: string;
+  };
+}[];
+
 export default function Home() {
-  const functionalites: { description: string; video: string }[] = [
+  const [showFunct, setshowFunct] = useState<Number>(1);
+  const functionalites: TFunctionalities = [
     {
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing",
-      video: "videoTest.mp4",
+      id: 1,
+      description: "Verification",
+      icon: <TvMinimal size={24} strokeWidth={2.25} />,
+      details: {
+        text: "Lorem ipsum dolor sit.",
+      },
     },
     {
-      description: "Lorem ipsum dolor sit amet",
-      video: "videoTest.mp4",
+      id: 2,
+      description: "Activities",
+      icon: <ClipboardList size={24} strokeWidth={2.25} />,
+      details: {
+        text: "Lorem ipsum dolor sit.",
+      },
     },
     {
-      description: "Lorem ipsum dolor ",
-      video: "videoTest.mp4",
+      id: 3,
+      description: "Bot",
+      icon: <Bot size={24} strokeWidth={2.25} />,
+      details: {
+        text: "Lorem ipsum dolor sit.",
+      },
     },
     {
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quod?",
-      video: "videoTest.mp4",
-    },
-    {
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quod?",
-      video: "videoTest.mp4",
+      id: 4,
+      description: "Ant-Copy",
+      icon: <CopyX size={24} strokeWidth={2.25} />,
+      details: {
+        text: "Lorem ipsum dolor sit.",
+      },
     },
   ];
   return (
     <>
       <section className="grid p-4 grid-flow-row w-full gap-8">
         <section className="flex flex-col items-center h-full col-span-1 gap-8 ">
-          <div className="bg-cyan-100/40 rounded-2xl p-2 flex items-center justify-center gap-4 max-w-[600px]">
+          <div className="bg-cyan-100/60 shadow-xl rounded-2xl p-4 flex items-center justify-center gap-4 max-w-[900px]">
             <button
               type="button"
               className="bg-black text-white  w-fit text-sm md:text-lg rounded-full"
@@ -84,27 +114,58 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="w-full space-y-4">
-        <h2 className="font-semibold text-2xl mt-12 md:text-3xl tracking-wider">
-          Funcionalidades
-        </h2>
-        <ul className="flex flex-wrap justify-center text-start font-bold gap-8 items-center w-full ">
-          {functionalites.length > 0 &&
-            functionalites.map((video, i) => (
-              <li className="w-fit relative border-4 border-black" key={i}>
-                <video
-                  src={video.video}
-                  className="max-h-80 w-full"
-                  loop
-                  autoPlay
-                ></video>
-                <p className="absolute bottom-0 left-0 p-2 w-full bg-black/40 text-white text-sm break-words">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Nihil maiores eveniet, ducimus fuga praesentium minima cum.
+      <section>
+        <ol className="flex mx-auto w-fit gap-10">
+          {functionalites.map((functi, i) => {
+            return (
+              <button
+                key={i}
+                onClick={() => setshowFunct(functi.id)}
+                className={`${
+                  functi.id === showFunct
+                    ? "border-mainBgButton bg-mainBgButton bg-opacity-[100%] text-white"
+                    : ""
+                }
+                  p-4 h-24 text-xl flex flex-col 
+                  gap-2 w-48 rounded-xl border-mainBgButton hover:border-mbg-mainBgButton border-2 bg-mainBgButton bg-opacity-[0%]
+                  transition-all ease duration-500 hover:text-white hover:bg-opacity-[100%]
+                  items-start justify-center font-bold
+                `}
+              >
+                {functi.icon}
+                {functi.description}
+              </button>
+            );
+          })}
+        </ol>
+      </section>
+      <section className="flex flex-col items-end justify-center bg-gray-950 mx-auto max-w-[900px] h-[500px] p-2 rounded-2xl">
+        <div className="flex items-center mx-auto w-[98%] mb-0.5">
+          <span className="flex gap-2">
+            <p className="bg-red-500 rounded-full w-2 h-2"></p>
+            <p className="bg-green-500 rounded-full w-2 h-2"></p>
+            <p className="bg-yellow-500 rounded-full w-2 h-2"></p>
+          </span>
+          <Radio size={22} className="icone ml-auto" />
+        </div>
+        {functionalites
+          .filter((item) => item.id === showFunct)
+          .map((item, i) => (
+            <div
+              key={i}
+              className="relative p-2 w-full h-full bg-white rounded-2xl"
+            >
+              <div className="absolute flex flex-col justify-center top-0 left-0 w-fit p-4 h-20 border-b border-r rounded-br-2xl text-lg border-gray-800 ">
+                <p className="font-semibold">
+                  Lorem ipsum dolor sit amet consectetur poulr.
                 </p>
-              </li>
-            ))}
-        </ul>
+                <span className="flex items-center gap-2 text-lg">
+                  <MessagesSquare size={20} strokeWidth={2} />
+                  {item.details.text}
+                </span>
+              </div>
+            </div>
+          ))}
       </section>
       <footer className="w-full flex-col p-4 bg-black text-white">
         <section className="flex flex-row w-full gap-40 mb-4">
