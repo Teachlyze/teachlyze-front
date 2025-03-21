@@ -10,6 +10,7 @@
     "json": "json-server --watch fakeApi.json --port 3000"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.10.1",
     "@radix-ui/react-slot": "^1.1.2",
     "axios": "^1.8.3",
     "class-variance-authority": "^0.7.1",
