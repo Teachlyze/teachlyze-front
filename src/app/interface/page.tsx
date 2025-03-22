@@ -7,7 +7,7 @@ export default function Interface() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("http://localhost:3000/api/services");
-      const { alunos, professores } = res.ok && (await res.json());
+      const { alunos } = res.ok && (await res.json());
       setData(alunos);
     };
     fetchData();

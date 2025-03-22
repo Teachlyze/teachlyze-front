@@ -82,12 +82,12 @@ export default function Home() {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Exercitationem, facilis.
               </p>
-              <Button
-                type="button"
+              <Link
                 className="mx-auto md:mx-0 w-fit bg-mainBgButton p-2 rounded-xl text-lg md:text-xl text-white"
+                href={"/interface"}
               >
                 Start a tutorial
-              </Button>
+              </Link>
             </div>
             <Image
               src="https://fast.image.delivery/tavvdre.jpg"
