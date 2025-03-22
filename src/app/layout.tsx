@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Main from "./components/layout/Main";
+import { UrlContext } from "@/context/useUrl";
 
 export const metadata: Metadata = {
   title: "Create Next App",
