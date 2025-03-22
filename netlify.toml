@@ -7,13 +7,13 @@
     pretty_urls = true
 
 [[plugins]]
-    package = "@opennextjs/netlify"
+    package = "@netlify/plugin-nextjs"
 
-[[plugins]]
-    package = "@netlify/plugin-lighthouse"
+#[[plugins]]
+    #package = "@netlify/plugin-lighthouse"
 
-    [plugins.inputs.audits]
-        output_path = "reports/lighthouse.html"
+    #[plugins.inputs.audits]
+        #output_path = "reports/lighthouse.html"
 
       # Set minimum thresholds for each report area
     #[plugins.inputs.thresholds]

@@ -66,21 +66,19 @@ export default function Home() {
               type="button"
               className="bg-black text-white  w-fit text-sm md:text-lg rounded-full"
             >
-              Empowering Educators
+              Menos tempo corrigindo, mais tempo ensinando!
             </button>
             <h4 className="text-sm md:text-lg w-full font-semibold text-start">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Quas,Lorem ipsum dolor sit amet. labore! Lorem, ipsum dolor sit
+              Revolucione seu ensino com automação inteligente e insights avançados da Teachlyze.
             </h4>
           </div>
-          <div className="flex items-center md:items-center text-center md:text-start w-full gap-10">
+          <div className="flex items-center md:items-center text-center md:text-start gap-10">
             <div className="flex flex-col w-full gap-4 ">
               <h1 className="text-black text-4xl lg:text-5xl font-bold w-full">
-                Streamline Your Yeaching Journey
+                Automação e inteligência para revolucionar a rotina dos professores.
               </h1>
               <p className="text-gray-600 font-bold text-lg lg:text-2xl mx-auto max-w-[500px] md:max-w-full">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Exercitationem, facilis.
+                A Teachlyze simplifica sua vida docente com correção automática de atividades, gestão de turmas e análise de desempenho baseada em IA. Concentre-se no que realmente importa: ensinar!
               </p>
               <Link
                 className="mx-auto md:mx-0 w-fit bg-mainBgButton p-2 rounded-xl text-lg md:text-xl text-white"
