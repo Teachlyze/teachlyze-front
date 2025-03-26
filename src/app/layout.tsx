@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/layout/Header";
-import Main from "./components/layout/Main";
-import { UrlContext } from "@/context/useUrl";
+import Template from "./template";
+import UrlProvider from "@/context/useUrl";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className="flex flex-col bg-white overflow-x-hidden">
-        <Header />
-        <div className="flex">
-          <Main children={children} />
-        </div>
+        <UrlProvider>
+          <Header />
+          <main className="flex-grow space-y-6 relative text-center">
+            <Template>{children}</Template>
+          </main>
+        </UrlProvider>
       </body>
     </html>
   );

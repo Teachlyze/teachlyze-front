@@ -1,9 +1,12 @@
+"use client";
+import { useUrl } from "@/context/useUrl";
 import Link from "next/link";
 export default function Header() {
+  const url = useUrl();
   return (
-    <header className="flex flex-row p-6 h-fit w-full">
+    <header className="flex p-4 h-fit w-full bg-black">
       <nav className="flex flex-row w-full justify-between font-bold">
-        <Link href={"/"} className="text-2xl tracking-widest p-0 m-0">
+        <Link href={"/"} className="text-2xl tracking-widest text-white">
           TEACH<span className="text-mainBgButton">L</span>YZE
         </Link>
         <ul className="hidden md:visible md:flex items-center flex-row gap-8">
@@ -22,7 +25,7 @@ export default function Header() {
         </ul>
         <Link
           href={"/"}
-          className="bg-black text-white p-2 rounded-3xl w-20 text-center h-fit"
+          className="bg-black text-white p-2 rounded-3xl w-fit text-center h-fit"
         >
           Login
         </Link>

@@ -1,8 +1,6 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import {
   Bot,
   ClipboardList,
@@ -22,97 +20,74 @@ type TFunctionalities = {
 }[];
 
 export default function Home() {
-  const [showFunct, setshowFunct] = useState<Number>(1);
-  const functionalites: TFunctionalities = [
-    {
-      id: 1,
-      description: "Verification",
-      icon: <TvMinimal size={24} strokeWidth={2.25} />,
-      details: {
-        text: "Lorem ipsum dolor sit.",
-      },
-    },
-    {
-      id: 2,
-      description: "Activities",
-      icon: <ClipboardList size={24} strokeWidth={2.25} />,
-      details: {
-        text: "Lorem ipsum dolor sit.",
-      },
-    },
-    {
-      id: 3,
-      description: "Bot",
-      icon: <Bot size={24} strokeWidth={2.25} />,
-      details: {
-        text: "Lorem ipsum dolor sit.",
-      },
-    },
-    {
-      id: 4,
-      description: "Ant-Copy",
-      icon: <CopyX size={24} strokeWidth={2.25} />,
-      details: {
-        text: "Lorem ipsum dolor sit.",
-      },
-    },
-  ];
   return (
     <>
-      <section className="grid p-4 grid-flow-row w-full gap-8">
-        <section className="flex flex-col items-center h-full col-span-1 gap-8 ">
-          <div className="bg-cyan-100/60 shadow-xl rounded-2xl p-4 flex items-center justify-center gap-4 max-w-[900px]">
+      <section className="p-4 w-full max-w-[98%] mx-auto bg-purple-50">
+        <section className="flex flex-col items-center h-full gap-12">
+          <div className="bg-cyan-100/60 shadow-xl rounded-2xl p-4 flex max-md:flex-wrap items-center w-auto justify-center gap-4">
             <button
               type="button"
-              className="bg-black text-white  w-fit text-sm md:text-lg rounded-full"
+              className="flex flex-col bg-black text-white p-2 w-fit font-bold text-sm md:text-lg rounded-2xl"
             >
-              Menos tempo corrigindo, mais tempo ensinando!
+              <span>Menos tempo corrigindo,</span>
+              <span>Mais tempo ensinando!</span>
             </button>
-            <h4 className="text-sm md:text-lg w-full font-semibold text-start">
-              Revolucione seu ensino com automação inteligente e insights avançados da Teachlyze.
+            <h4 className="text-sm md:text-lg mr-auto w-auto font-semibold max-w-[400px] mx-auto max-md:text-center text-start">
+              Revolucione seu ensino com automação inteligente e insights
+              avançados da Teachlyze.
             </h4>
           </div>
-          <div className="flex items-center md:items-center text-center md:text-start gap-10">
-            <div className="flex flex-col w-full gap-4 ">
-              <h1 className="text-black text-4xl lg:text-5xl font-bold w-full">
-                Automação e inteligência para revolucionar a rotina dos professores.
+          <div className="grid grid-cols-2 p-2 lg:text-start">
+            <div className="max-lg:col-span-2 col-span-1">
+              <h1 className="text-black text-2xl lg:text-3xl font-bold w-full">
+                Automação e inteligência para revolucionar a rotina dos
+                professores.
               </h1>
-              <p className="text-gray-600 font-bold text-lg lg:text-2xl mx-auto max-w-[500px] md:max-w-full">
-                A Teachlyze simplifica sua vida docente com correção automática de atividades, gestão de turmas e análise de desempenho baseada em IA. Concentre-se no que realmente importa: ensinar!
+              <p className="text-gray-600 font-bold text-lg lg:text-lg mx-auto mb-2 mt-4">
+                A Teachlyze simplifica sua vida docente com correção automática
+                de atividades, gestão de turmas e análise de desempenho baseada
+                em IA. Concentre-se no que realmente importa:
               </p>
               <Link
-                className="mx-auto md:mx-0 w-fit bg-mainBgButton p-2 rounded-xl text-lg md:text-xl text-white"
+                className="p-2 rounded-lg text-lg ml-auto uppercase font-bold bg-mainBgButton text-white"
                 href={"/interface"}
               >
-                Start a tutorial
+                ensinar!
               </Link>
             </div>
             <Image
               src="https://fast.image.delivery/tavvdre.jpg"
-              className="hidden md:block rounded-2xl min-w-[300px] w-full max-w-[500px] "
+              className="hidden lg:block rounded-2xl ml-auto lg:col-span-1"
               alt="professora ministrando aula"
               width={500}
               height={300}
               sizes="100vw"
-              style={{ objectFit: "cover", width: "60%", height: "auto" }}
+              style={{ objectFit: "cover", width: "80%", height: "auto" }}
             ></Image>
           </div>
+          <section className="relative max-w-[600px] w-full bg-gray-800/80 backdrop-blur-md p-4 lg:text-xl text-mainBgButton rounded-xl border border-black shadow-lg">
+            <div className="absolute top-8 left-0 w-20 h-20 bg-black rounded-br-full -z-10 opacity-40"></div>
+            <p>1234 Professores online</p>
+            <p>400 Alunos online</p>
+            <div className="absolute bottom-4 right-4 w-20 h-20 bg-red-800 rounded-lg -z-10 opacity-40"></div>
+          </section>
+          <section className="bg-cyan-100/60 shadow-xl text-start p-2 rounded-xl space-y-4 w-full h-fit mx-auto">
+            <h3 className="text-2xl">Lorem ipsum dolor sit.</h3>
+            <div className="text-lg grid grid-cols-1">
+              <p className="col-span-1 text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque illo autem sit tempora ex nesciunt natus debitis
+                voluptatibus possimus quam cupiditate quibusdam placeat quod qui
+                obcaecati mollitia voluptate perspiciatis doloribus, minus
+                sapiente. Ad rerum dolorem numquam. In excepturi suscipit, nemo
+                iste unde quisquam dolor accusantium corporis modi eveniet
+                recusandae provident!
+              </p>
+            </div>
+          </section>
         </section>
       </section>
-      <section className="bg-cyan-100/60 shadow-xl text-start p-2 rounded-xl space-y-4 w-[90%] max-w-[900px] mx-auto">
-        <h3 className="text-2xl">Lorem ipsum dolor sit.</h3>
-        <div className="text-lg grid grid-cols-1">
-          <p className="col-span-1 text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-            illo autem sit tempora ex nesciunt natus debitis voluptatibus
-            possimus quam cupiditate quibusdam placeat quod qui obcaecati
-            mollitia voluptate perspiciatis doloribus, minus sapiente. Ad rerum
-            dolorem numquam. In excepturi suscipit, nemo iste unde quisquam
-            dolor accusantium corporis modi eveniet recusandae provident!
-          </p>
-        </div>
-      </section>
-      <section>
+      {/* <section>
         <ol className="flex mx-auto w-fit gap-10">
           {functionalites.map((functi, i) => {
             return (
@@ -212,9 +187,9 @@ export default function Home() {
               Docs
             </Link>
           </div>
-          <span className="w-20">{/* usado pra equilibrar o layout */}</span>
+          <span className="w-20"></span>
         </section>
-      </footer>
+      </footer> */}
     </>
   );
 }
