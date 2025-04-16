@@ -1,15 +1,13 @@
 "use client";
-import { useUrl } from "@/context/useUrl";
 import Link from "next/link";
 export default function Header() {
-  const url = useUrl();
   return (
-    <header className="flex p-4 h-fit w-full bg-black">
+    <header className="flex p-2 h-fit w-full bg-black">
       <nav className="flex flex-row w-full justify-between font-bold">
-        <Link href={"/"} className="text-2xl tracking-widest text-white">
+        <Link href={"/"} className="hover:text-mainBgButton transition-colors duration-300 ease-in-out text-2xl tracking-widest text-white">
           TEACH<span className="text-mainBgButton">L</span>YZE
         </Link>
-        <ul className="hidden md:visible md:flex items-center flex-row gap-8">
+        <ul className="max-sm:hidden flex items-center flex-row gap-8 text-mainText">
           <li>
             <Link href={"/"}>Home</Link>
           </li>
