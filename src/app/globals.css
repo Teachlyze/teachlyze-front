@@ -14,10 +14,30 @@
   }
 }
 
+@layer utilities {
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+  .scroll-x {
+    animation: scroll-x 10s linear infinite;
+  }
+  .pause-scroll-x:hover {
+    animation-play-state: paused !important;
+  }
+}
+
 .icone {
   animation: mudarCor 2s ease-in-out infinite;
 }
 
+.wave-shape {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+}
 /* 
 @layer base {
   :root {
