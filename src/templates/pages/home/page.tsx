@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -13,9 +13,15 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useFunctionalites } from "@/context/useUrl";
-import { TFunctionalities } from "@/app/page";
 import { Carousel } from "@/app/components/ui/Carousel";
-
+export type TFunctionalities = {
+  id: number;
+  description: string;
+  icon: JSX.Element;
+  details: {
+    text: string;
+  };
+}[];
 
 type THomePageTemplateProps = {
     functionalites: TFunctionalities;
@@ -76,7 +82,7 @@ export default function HomePageTemplate(props: THomePageTemplateProps) {
           </h4>
         </div>
         <div className="grid grid-cols-2 max-sm:grid-cols-1 text-start">
-          <div className="flex flex-col items-center justify-center max-lg:col-span-2 p-4 col-span-1 bg-white rounded-xl border-2 border-gray-600">
+          <div className="flex flex-col items-center justify-center h-fit lg:min-h-[348px] max-lg:col-span-2 p-4 col-span-1 bg-white rounded-xl border-2 border-gray-600">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold w-full">
               Automação e inteligência para revolucionar a rotina dos
               professores.
@@ -97,12 +103,12 @@ export default function HomePageTemplate(props: THomePageTemplateProps) {
           </div>
           <Image
             src="https://fast.image.delivery/tavvdre.jpg"
-            className="hidden lg:block rounded-2xl ml-auto lg:col-span-1 border-gray-600"
+            className="hidden lg:block ml-auto lg:col-span-1 rounded-3xl mr-4 border-gray-600"
             alt="professora ministrando aula"
             width={500}
             height={300}
             sizes="100vw"
-            style={{ objectFit: "contain", width: "90%", height: "330px" }}
+            style={{ objectFit: "cover", width: "90%", height: "348px" }}
           ></Image>
         </div>
         <section
@@ -111,8 +117,9 @@ export default function HomePageTemplate(props: THomePageTemplateProps) {
           lg:text-xl text-white font-bold
           "
         >
-          <div className="absolute bg-gradient-to-r from-purple-600 to-cyan-300 w-[102%] h-[105%] p-2 -z-10 rounded-xl"></div>
-          <div className="bg-gray-600/40 flex flex-wrap items-center justify-center w-full rounded-xl p-2">  
+          <div className="absolute bg-gradient-to-r from-purple-600 to-cyan-300 w-[102%] h-[105%] p-2 -z-10 rounded-xl">
+          </div>
+          <div className="bg-gray-600/40 flex flex-wrap items-center justify-center w-full rounded-xl p-2 sm:text-sm md:text-base lg:text-xl 2xl:text-2xl">  
             <div className="flex flex-col text-start p-4 w-fit">
               <p>1234 Professores online</p>
               <p>400 Alunos online</p>
@@ -195,12 +202,12 @@ export default function HomePageTemplate(props: THomePageTemplateProps) {
               ))}
               <Image
                 src="https://fast.image.delivery/tavvdre.jpg"
-                className="lg:block rounded-2xl mx-auto lg:col-span-1 border-gray-600"
+                className="lg:block mx-auto lg:col-span-1 rounded-2xl"
                 alt="professora ministrando aula"
                 width={500}
                 height={300}
                 sizes="100vw"
-                style={{ objectFit: "cover", width: "100%", height: "440px" }}
+                style={{ objectFit: "cover", width: "100%", height: "440px"}}
               />
               </div>
           </section>
@@ -208,72 +215,9 @@ export default function HomePageTemplate(props: THomePageTemplateProps) {
       </section>
       <section className="w-screen h-full mt-6">
         <h2 className="text-2xl">Opniões de Usuários</h2>
-        <Carousel opnions={opnions}/>
+        <Carousel opnions={opnions} style="w-80 h-44 bg-zinc-100 border-2 border-black shadow-2xl gap-2 rounded-lg flex flex-col items-start justify-between p-2 text-black"/>
       </section>
     </section>
-      <footer className="w-full flex-col p-4 bg-black text-white/60">
-        <section className="flex flex-wrap justify-start gap-8 w-full mb-4">
-          <div className="flex flex-col items-start justify-center gap-4 w-fit">
-            <p className="text-lg font-bold text-white">Links rápidos</p>
-            <ul className="space-y-2 mx-2">
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Github</Link>
-              </li>
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Contact Us</Link>
-              </li>
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Home</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col items-start justify-center gap-4 w-fit text-secondary">
-            <p className="text-lg font-bold text-white">Links rápidos</p>
-            <ul className="space-y-2">
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Github</Link>
-              </li>
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Contact Us</Link>
-              </li>
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Home</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col items-start justify-center gap-4 w-fit">
-            <p className="text-lg font-bold text-white">Links rápidos</p>
-            <ul className="space-y-2">
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Github</Link>
-              </li>
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Contact Us</Link>
-              </li>
-              <li className="text-start text-lg w-fit cursor-pointer hover:text-mainBgButton transition-all duration-300 ease-in-out">
-                <Link href="/#">Home</Link>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section className="flex flex-wrap border-t p-4 border-gray-800/80 items-center gap-4 justify-center sm:justify-between w-full">
-          <p className="text-base tracking-widest">
-            TEACH<span className="text-mainBgButton">L</span>YZE
-          </p>
-          <div className="flex text-sm items-center gap-4 sm:ml-auto">
-            <p className="">© 2025 TCC All rights reserved</p>
-            <Link href={""} className="hover:text-mainBgButton transition-all duration-300 ease-in-out">
-              Terms
-            </Link>
-            <Link href={""} className="hover:text-mainBgButton transition-all duration-300 ease-in-out">
-              Privacy
-            </Link>
-            <Link href={""} className="hover:text-mainBgButton transition-all duration-300 ease-in-out">
-              Docs
-            </Link>
-          </div>
-        </section>
-      </footer>
-      </>
+    </>
   );
 }
