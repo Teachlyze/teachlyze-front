@@ -9,9 +9,10 @@ interface OpnionItem {
 
 interface CarouselProps {
   opnions: OpnionItem[];
+  style: string 
 }
 
-export const Carousel = ({ opnions }: CarouselProps) => {
+export const Carousel = ({ opnions, style }: CarouselProps) => {
   const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -46,24 +47,25 @@ export const Carousel = ({ opnions }: CarouselProps) => {
 
   return (
     <div
-      className="overflow-x-auto scrollbar-none"
+      className="overflow-hidden"
       ref={containerRef}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="flex space-x-4 p-4 w-max">
+      <div className="flex gap-8 p-4 w-max">
         {duplicatedItems.map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="w-64 h-40 bg-blue-500 gap-2 rounded-lg flex flex-col items-start justify-between p-2 text-white"
+            className={style}
           >
-            <div className="text-start">
-              <span>{item.stars}</span>
-              <p className="line-clamp-2 font-bold">{item.opnion}</p>
+            <div className="flex flex-col items-start text-start justify-center">
+              <span className="text-lg">⭐⭐⭐⭐</span>
+              <p className="text-start w-full h-fit 
+              max-sm:text-base text-wrap line-clamp-2 text-lg 2xl:text-lg min-h-[50%]">{item.opnion}</p>
             </div>
-            <div className="text-start">
-              <p>{item.name}</p>
-              <p>{item.id}</p>
+            <div>
+              <p className="text-start w-24 font-bold">{item.name}</p>
+              <p className="uppercase text-start w-24">{item.id}</p>
             </div>
           </div>
         ))}

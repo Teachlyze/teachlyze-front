@@ -45,6 +45,6 @@ const functionalites: TFunctionalities = [
   },
 ];
 
-export default function Home() {
-  return <HomePageTemplate functionalites={functionalites}/>;
+export default function Home() { 
+  return (<HomePageTemplate functionalites={functionalites}/>);
 }
